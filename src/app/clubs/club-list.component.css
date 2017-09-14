@@ -1,0 +1,28 @@
+thead {
+    color: #337AB7;
+}
+
+th {
+    
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+.club-name {
+    
+    font-weight: bold;
+    font-size: 20px;
+    color: #337AB7; 
+    }
+
+    .image {
+        background-color: #202020
+      }  
+
+     .image:hover img {
+          opacity: 0.5;
+
+      }
