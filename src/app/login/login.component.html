@@ -1,20 +1,20 @@
-<div class="app-content">
+<div>
         
-        <div class="group">
+        <div class="form-group">
       
           <form role="form" (submit)="login()"><br>
             <div>
                <div>
                Username
                </div>
-              <input type="text" required [(ngModel)]="user.username" id="username" name="username" >
+              <input class="form-control" type="text" required [(ngModel)]="user.username" id="username" name="username" >
              
             </div><br><br>
             <div>
              <div >
              Password
              </div>
-              <input type="password" required [(ngModel)]="user.password" id="password" name="password" >
+              <input class="form-control" type="password" required [(ngModel)]="user.password" id="password" name="password" >
               
             </div><br><br>
             <button color="warn" type="submit" name="action">LOGIN</button><br><br>

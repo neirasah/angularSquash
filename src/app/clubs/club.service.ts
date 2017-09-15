@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core'
 import { IClub } from './club';
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class ClubService {
@@ -128,7 +129,7 @@ getClubs(): IClub[] {
     {
         clubId: 4,
         clubName: 'Sport Club Oasen',
-        clubAddress: 'midesvägen 3',
+        clubAddress: 'Midesvägen 3',
         clubCourts: 6,
         clubOpen: 'From 10:00 a.m. To 10.00 p.m.',
         imageUrl: './assets/images/squash3.jpg',

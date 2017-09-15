@@ -7,8 +7,10 @@
       <ul class='nav navbar-nav'>
         <li class="nav-item"><a [routerLink]="['/welcome']">Home</a></li>
         <li class="nav-item"><a [routerLink]="['/clubs']">Squash Clubs</a></li>
-        <li *ngIf="auth.checkLoginStatus" class="nav-item"><a [routerLink]="['/login']">Login</a></li>
-        <li *ngIf="!auth.checkLoginStatus" class="nav-item"><a href="#" (click)="auth.logout()">Logout</a></li>
+        <li class="nav-item">
+          <a *ngIf="!auth.checkLoginStatus" [routerLink]="['/login']" >Login</a>
+          <a *ngIf="auth.checkLoginStatus"  href="#" (click)="auth.logout()">Logout</a>
+        </li>
         <!--<li class="nav-item"><a [routerLink]="auth.checkLoginStatus ? './logout' : './login'" [textContent]="auth.checkLoginStatus ? 'Logout' : 'Login'"></a></li>-->
         <!--not working!!-->
 

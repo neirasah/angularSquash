@@ -22,20 +22,23 @@
                 </thead>
                 <tbody>
                     
-                        <tr *ngFor='let club of clubs' >
-                       <a [routerLink]="['/clubs', club.clubId]"><td><div class="image"><img [src]='club.imageUrl' 
+                        <tr *ngFor='let club of clubs' style="border" >
+                       <a [routerLink]="['/clubs', club.clubId]">
+                        <td>
+                         <div class="image">
+                            <img [src]='club.imageUrl' 
                             [title]='club.clubName'
                             [style.width.px]='imageWidth'
-                            [style.margin.px]='imageMargin'
-                            />
-                       </div></td>
+                            [style.margin.px]='imageMargin'/>
+                         </div>
+                        </td>
                         </a>
                         <a [routerLink]="['/clubs', club.clubId]">
                         <td class="club-name">{{club.clubName}}</td>
                         </a>
-                        <td>{{club.clubAddress}}</td>
-                        <td>{{club.clubCourts}}</td>
-                        <td>{{club.clubOpen}}</td>
+                        <td style="padding:2%">{{club.clubAddress}}</td>
+                        <td style="padding:2%">{{club.clubCourts}}</td>
+                        <td style="padding:2%">{{club.clubOpen}}</td>
 
                     </tr>
                 </tbody>

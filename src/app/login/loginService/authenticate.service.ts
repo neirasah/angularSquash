@@ -13,17 +13,17 @@ export class AuthenticateService {
   constructor(private _router: Router) { }
 
   checkUser(): boolean {
-    if (localStorage.getItem("user") === undefined){
+    if (sessionStorage.getItem("user") === undefined){
       this._router.navigate(['/login']);
     }
 
-    return localStorage.getItem("user") === undefined ? false : true;
+    return sessionStorage.getItem("user") === undefined ? false : true;
   }
 
   login(user) {
     let authenticatedUser = users.find(u => u.username === user.username);
     if (authenticatedUser !== undefined && authenticatedUser.password === user.password){
-      localStorage.setItem("user", authenticatedUser.username);
+      sessionStorage.setItem("user", authenticatedUser.username);
       this.checkLoginStatus = true;
       this._router.navigate(['/clubs']);
       return true;
@@ -31,8 +31,8 @@ export class AuthenticateService {
     return false;
   }
 
-  logout() :void{
-    localStorage.removeItem("user");
+  logout() {
+    sessionStorage.removeItem("user");
     this.checkLoginStatus = false;
     this.checkUser;
   }

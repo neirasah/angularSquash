@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { IClub } from "./club";
@@ -11,16 +11,22 @@ import { ICourt } from './court';
   templateUrl: './club-detail.component.html',
   styleUrls: ['./club-detail.component.css']
 })
+
+@Injectable()
 export class ClubDetailComponent implements OnInit {
   pageTitle: string ='Squash Clubs Detail';
   club: IClub;
   courts:ICourt;
   
 
-  constructor(private clubService: ClubService,
+  constructor(private _clubService: ClubService,
+              private _courtService: ClubService,
               private _route: ActivatedRoute,
               private _router: Router,
             ) { }
+
+
+      
 
   ngOnInit() {
 
